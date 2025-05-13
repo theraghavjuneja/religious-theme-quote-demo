@@ -1,12 +1,27 @@
 import { useState } from 'react'
+import html2pdf from 'html2pdf.js'
+import { useRef } from 'react';
 import './style.css'
 
 
 
 function AffirmationsPage() {
+  const contentRef=useRef();
+  const handleDownload = () => {
+    const element = contentRef.current;
+    const opt = {
+      margin:       0.5,
+      filename:     'affirmations.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  };
   return (
     <div className="min-h-screen bg-amber-50 p-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+
+      <div ref={contentRef} className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <header className="text-center mb-8">
           <h1 className="text-3xl font-bold text-orange-800">ब्रह्माकुमारी सकारात्मक संकल्प</h1>
         </header>
@@ -58,6 +73,14 @@ function AffirmationsPage() {
           <p>© 2025 ओमशान्ति ब्रह्मकुमारी</p>
           <p className="mt-2">पृष्ठ 1 / 2</p>
         </footer>
+      </div>
+      <div className="text-center mt-6">
+        <button
+          onClick={handleDownload}
+          className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Download as PDF
+        </button>
       </div>
     </div>
   );
