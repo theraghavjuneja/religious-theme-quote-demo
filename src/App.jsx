@@ -22,20 +22,20 @@ function AffirmationsPage() {
     <div className="min-h-screen bg-amber-50 p-8">
 
       <div ref={contentRef} className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-orange-800">ब्सकारात्मक संकल्प</h1>
-        </header>
+        {/* <header className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-orange-800">सकारात्मक संकल्प</h1>
+        </header> */}
         
         <div className="space-y-8">
           <div className="border-2 border-black p-6 rounded-lg">
-            <p className="text-center font-bold text-xl">
+            <p className="text-center font-bold text-l">
               सुबह उठते ही और रात को सोने से पहले हमारा अवचेतन मन सबसे ज़्यादा एक्टिव होता है। इसलिए हम अगर उस समय पर अच्छे संकल्प करेंगे तो वो हमारे संकल्प सिद्ध होंगे।
             </p>
           </div>
 
           <div>
-            <h2 className="font-bold text-xl mb-4">सुबह उठते ही पहले 10 मिनट और रात को सोने से पहले ये संकल्प करें-</h2>
-            <ul className="space-y-3 list-decimal pl-8">
+            <h2 className="font-bold text-m mb-4">सुबह उठते ही पहले 10 मिनट और रात को सोने से पहले ये संकल्प करें-</h2>
+            <ul className="space-y-1.5 list-decimal pl-8">
               <li>पर्मात्मा आपका शुक्रिया, आपने मुझे सब कुछ दिया है।</li>
               <li>मैं शक्तिशाली आत्मा हूँ क्योंकि भगवान मेरे साथ है।</li>
               <li>मैं मास्टर सर्वशक्तिवान हूँ, भगवान के सारी शक्ति मेरे पास है।</li>
@@ -56,23 +56,17 @@ function AffirmationsPage() {
           </div>
 
           <div>
-            <h2 className="font-bold text-xl mb-4">संकल्प स्टुडेंट्स के लिए -</h2>
-            <ul className="space-y-3 list-decimal pl-8">
+            <h2 className="font-bold text-m mb-4">संकल्प स्टुडेंट्स के लिए -</h2>
+            <ul className="space-y-1.5 list-decimal pl-8">
               <li><strong>(कोई भी पढ़ाई पढ़ने से पहले यहें बोले)-</strong> मैं आत्मा, मन बुद्धी की मालिक हूँ, हे बुद्धी, जो पढ़ाया जाए उसे साथ-साथ याद कर लेना!</li>
               <li><strong>(इंट्रव्यू देने या कोई इग्जाम देने से पहले यह बोले)-</strong> मैं सर्वशक्तिवान की संतान, मास्टर सर्वशक्तिवान हूँ। सफलता पाना मेरा जन्मसिद्ध अधिकार है। सफलता तो मेरी हुई पड़ी है।</li>
               <li>वही प्रश्न पुछे जाएंगे जिनके जवाब मुझे आते हैं। मैं नोलेज़फुल आत्मा हूँ, सभी प्रश्नों के जवाब मुझे आते हैं।</li>
             </ul>
           </div>
 
-          <div className="mt-8 text-center italic bg-orange-50 p-4 rounded-lg">
-            <p>आप गांव या शहर में जहां भी रहते हैं, आपके आसपास ओमशान्ति ब्रह्मकुमारी सेंटर जरूर मिलेगा. वहाँ आप नीशुल्क सात दिन का कोर्स करके 21 दिन में सभी परिशानी से छुटकारा पाएं, मेडिटेशन करना सीखें और परमात्मा का परिचय पाएं।</p>
-          </div>
+          
         </div>
 
-        <footer className="mt-8 text-center text-gray-600">
-          <p>© 2025 ओमशान्ति ब्रह्मकुमारी</p>
-          <p className="mt-2">पृष्ठ 1 / 2</p>
-        </footer>
       </div>
       <div className="text-center mt-6">
         <button
