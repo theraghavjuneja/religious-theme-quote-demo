@@ -23,7 +23,7 @@ function AffirmationsPage() {
 
       <div ref={contentRef} className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-orange-800">ब्रह्माकुमारी सकारात्मक संकल्प</h1>
+          <h1 className="text-3xl font-bold text-orange-800">ब्सकारात्मक संकल्प</h1>
         </header>
         
         <div className="space-y-8">
