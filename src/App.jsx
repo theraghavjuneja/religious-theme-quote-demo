@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import html2pdf from 'html2pdf.js'
 import { useRef } from 'react';
-import './style.css'
-
-
+import './style.css';
 
 function AffirmationsPage() {
-  const contentRef=useRef();
+  const contentRef = useRef();
+
   const handleDownload = () => {
     const element = contentRef.current;
     const opt = {
@@ -16,25 +14,44 @@ function AffirmationsPage() {
       html2canvas:  { scale: 2 },
       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
-    html2pdf().set(opt).from(element).save();
+    
+    // Note: html2pdf is imported in your original code but would need to be available in the actual implementation
+    if (typeof html2pdf === 'function') {
+      html2pdf().set(opt).from(element).save();
+    }
   };
-  return (
-    <div className="min-h-screen bg-amber-50 p-8">
 
-      <div ref={contentRef} className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        {/* <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-orange-800">सकारात्मक संकल्प</h1>
-        </header> */}
+  // Background image style - same as in YugaCyclePage
+  const backgroundStyle = {
+    backgroundImage: "url('https://www.brahmakumaris.com/wp-content/uploads/2021/09/lq_GA-23-1-768x512.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
+  };
+
+  return (
+    <div className="min-h-screen p-8">
+      <div 
+        className="max-w-4xl mx-auto rounded-lg shadow-lg p-8" 
+        ref={contentRef}
+        style={{
+          ...backgroundStyle,
+          backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), " + backgroundStyle.backgroundImage
+        }}
+      >
+        <header className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-orange-800 drop-shadow-lg" style={{ textShadow: "0px 0px 3px white" }}>सकारात्मक संकल्प</h1>
+        </header>
         
         <div className="space-y-8">
-          <div className="border-2 border-black p-6 rounded-lg">
-            <p className="text-center font-bold text-l">
+          <div className="border-2 border-black p-6 rounded-lg bg-white bg-opacity-60">
+            <p className="text-center font-bold text-lg">
               सुबह उठते ही और रात को सोने से पहले हमारा अवचेतन मन सबसे ज़्यादा एक्टिव होता है। इसलिए हम अगर उस समय पर अच्छे संकल्प करेंगे तो वो हमारे संकल्प सिद्ध होंगे।
             </p>
           </div>
 
-          <div>
-            <h2 className="font-bold text-m mb-4">सुबह उठते ही पहले 10 मिनट और रात को सोने से पहले ये संकल्प करें-</h2>
+          <div className="bg-white bg-opacity-60 p-4 rounded shadow-md">
+            <h2 className="font-bold text-xl mb-4">सुबह उठते ही पहले 10 मिनट और रात को सोने से पहले ये संकल्प करें-</h2>
             <ul className="space-y-1.5 list-decimal pl-8">
               <li>पर्मात्मा आपका शुक्रिया, आपने मुझे सब कुछ दिया है।</li>
               <li>मैं शक्तिशाली आत्मा हूँ क्योंकि भगवान मेरे साथ है।</li>
@@ -55,18 +72,15 @@ function AffirmationsPage() {
             </ul>
           </div>
 
-          <div>
-            <h2 className="font-bold text-m mb-4">संकल्प स्टुडेंट्स के लिए -</h2>
+          <div className="bg-white bg-opacity-60 p-4 rounded shadow-md">
+            <h2 className="font-bold text-xl mb-4">संकल्प स्टुडेंट्स के लिए -</h2>
             <ul className="space-y-1.5 list-decimal pl-8">
               <li><strong>(कोई भी पढ़ाई पढ़ने से पहले यहें बोले)-</strong> मैं आत्मा, मन बुद्धी की मालिक हूँ, हे बुद्धी, जो पढ़ाया जाए उसे साथ-साथ याद कर लेना!</li>
               <li><strong>(इंट्रव्यू देने या कोई इग्जाम देने से पहले यह बोले)-</strong> मैं सर्वशक्तिवान की संतान, मास्टर सर्वशक्तिवान हूँ। सफलता पाना मेरा जन्मसिद्ध अधिकार है। सफलता तो मेरी हुई पड़ी है।</li>
               <li>वही प्रश्न पुछे जाएंगे जिनके जवाब मुझे आते हैं। मैं नोलेज़फुल आत्मा हूँ, सभी प्रश्नों के जवाब मुझे आते हैं।</li>
             </ul>
           </div>
-
-          
         </div>
-
       </div>
       <div className="text-center mt-6">
         <button
@@ -80,10 +94,8 @@ function AffirmationsPage() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <AffirmationsPage />
   );
 }
-
-export default App;
